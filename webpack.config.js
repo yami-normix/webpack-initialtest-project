@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // Para extraer el css del bundle y ponerlo en un archivo aparte
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -29,10 +28,6 @@ module.exports = {
                 'sass-loader'
             ]
             },
-            {
-                test: /\.png$/,
-                type: 'asset/resource'
-            }
         ]
     },
     plugins: [
@@ -42,14 +37,6 @@ module.exports = {
             filename: './index.html'
         }),
         new MiniCssExtractPlugin(),
-        new CopyWebpackPlugin({
-            patterns: [
-                {
-                    from: path.resolve(__dirname, "src", "assets/images"),
-                    to: "assets/images"
-                }
-            ]
-        }),
     ],
     optimization: {
         minimize: true,

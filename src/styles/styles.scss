@@ -1,3 +1,39 @@
 body {
-    background-color: #f3f3f3;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 10px;
+  }
+  
+  .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    color: transparent;
+    transition: background-color 0.3s ease-in-out;
+  
+    &:hover {
+      background-color: lightcoral;
+    }
+  
+    &.active {
+      background-color: #aaffaa;
+      pointer-events: none;
+      color: black;
+    }
+  }
+  
