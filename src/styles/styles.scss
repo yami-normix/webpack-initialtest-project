@@ -1,12 +1,32 @@
+$color-fondo-claro: #f9f9f9;
+$color-texto-claro: #333;
+
+$color-fondo-oscuro: #333;
+$color-texto-oscuro: #f9f9f9;
+
 body {
+   background-color: $color-fondo-claro;
+    color: $color-texto-claro;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    position: relative;
   }
 
+  body.dark-mode {
+    background-color: $color-fondo-oscuro;
+    color: $color-texto-oscuro;
+  }
+  .button-container {
+    position: absolute;
+    margin-top: 400px;
+    display: flex;
+    flex-direction: column;
+    }
   
+ 
   .grid {
     display: grid;
     grid-template-columns: repeat(4, 100px);

@@ -1,6 +1,14 @@
 import './styles/main.css';
 import './styles/styles.scss'
 
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Manejar el clic en el botón para alternar el modo
+themeToggle.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+});
+
 const items = document.querySelectorAll('.item');
 let selectedValue = null;
 let matchedPairs = 0;
@@ -40,3 +48,4 @@ items.forEach(item => {
     }
   });
 });
+
